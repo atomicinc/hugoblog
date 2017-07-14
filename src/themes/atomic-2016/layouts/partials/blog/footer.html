@@ -1,0 +1,26 @@
+<footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href='{{ .Site.Data.site.paths.about }}'>About</a></h4>
+                    {{ if .Site.Data.site.blog.footer_content }}
+                        <p>{{ .Site.Data.site.blog.footer_content }}</p>
+                    {{ end }}
+                </div>
+                <div class="social-links">
+                    {{ if .Site.Data.site.author.email }}
+                        <a class="external ico-gmail" href="mailto:{{ .Site.Data.site.author.email }}" rel="me" target="_blank" title="email"></a>
+                    {{ end }}
+                    <a class="external ico-rss" href='{{ "/feed.xml" }}' rel="me" target="_blank" title="feed"></a>
+                    {{ range $i, $link := .Site.Data.site.author.social_links }}
+                        {{ if $link.url }}
+                            <a class="external ico-{{ $link.name }}" href="{{ $link.url }}" rel="me" target="_blank" title="{{ $link.name }}"></a>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to top</a>
+</footer>

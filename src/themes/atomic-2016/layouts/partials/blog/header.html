@@ -1,0 +1,40 @@
+<header class="the-header">
+    <div class="unit-head">
+        <div class="unit-head-background" style="background-image: url({{ .Site.Data.site.header_image }}); background-position: 50% 50%; background-size: cover;"></div>
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" data-ga="Menu"></button>
+                        <h1><a href="{{ .Site.Data.site.paths.home }}">{{ .Site.Title }}</a></h1>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" data-ga="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    {{ $total := len .Site.Data.site.navigation }}
+                    {{ range $i, $link := .Site.Data.site.navigation }}
+                    {{ $current := "" }}{{ $last := "" }}{{ $first := "" }}
+                    {{ if eq .Page.URL $link.url }}
+                    {{ $current := "current" }}
+                    {{ end }}
+                    {{ if eq $i 0 }}
+                    {{ $first := "first" }}
+                    {{ end }}
+                    {{ if eq $i $total  }}
+                    {{ $last := "last" }}
+                    {{ end }}
+                    <li class="element {{ $first }}{{ $current }}{{ $last }}">
+                        <a href="{{ $link.url }}">{{ $link.title }}</a>
+                    </li>
+                    {{ end }}
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a data-ga="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+{{ partial "blog/overlay.html" . }}

@@ -1,0 +1,8 @@
+baseURL: http://example.org/
+disablePathToLower: true
+languageCode: en-us
+title: Atomic Energy
+taxonomies:
+  tag: "tags"
+  category: "categories"
+theme: atomic-2016

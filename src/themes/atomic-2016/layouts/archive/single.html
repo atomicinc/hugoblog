@@ -1,0 +1,51 @@
+{{ partial "head.html" . }}
+<body>
+  {{ partial "common/notices.html" . }}
+
+
+
+  <div id="page" class="hentry">
+    {{ partial "blog/header.html" . }}
+
+    <div class="body animated fadeInDown" role="main">
+        <div class="unit-body">
+            <div class="unit-inner unit-body-inner">
+                <div class="entry-content">
+
+
+<article class="unit-article layout-page">
+
+  <div class="content container">
+    <div class="post">
+      <h1>{{ .Title }}</h1>
+<section id="archive">
+  {{ $.Scratch.Set "year" -1 }}
+  <ul class="this">
+  {{ range where .Site.RegularPages "Type" "==" "post" }}
+    {{ $nyear := .Date.Format "2006" }}
+    {{ if ne ($.Scratch.Get "year") $nyear }}
+      </ul>
+      <h3>{{ $nyear }}</h3>
+      <ul class="past">
+    {{ end }}
+      <li><time>{{ .Date.Format "2006 Jan 02" }}</time>&nbsp;&nbsp;&nbsp;<a href="{{ .URL }}">{{ .Title }}</a></li>
+    {{ $.Scratch.Set "year" $nyear }}
+  {{ end }}
+  </ul>
+</section>
+</div>
+</div>
+
+</article>
+
+</div>
+</div>
+</div>
+</div>
+{{ partial "blog/footer.html" . }}
+</div>
+
+{{ partial "blog/scripts.html" . }}
+
+</body>
+</html>

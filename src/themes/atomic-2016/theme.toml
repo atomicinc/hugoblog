@@ -1,0 +1,10 @@
+name = "Atomic 2016"
+license = "Commercial"
+description = "Atomic Theme"
+tags = ["blog", "company"]
+features = ["blog", "themes"]
+min_version = 0.20
+
+[author]
+    name = "deitch"
+    homepage = "https://github.com/deitch"

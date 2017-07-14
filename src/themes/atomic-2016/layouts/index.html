@@ -1,0 +1,87 @@
+
+{{ partial "head.html" . }}
+
+<body>
+    {{ partial "common/notices.html" . }}
+
+    <div id="page" class="hentry">
+      {{ partial "blog/header.html" . }}
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+
+
+                      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+
+
+                      <article class="unit-article layout-post">
+                          <div class="unit-inner unit-article-inner">
+                              <div itemscope itemtype="http://schema.org/Article" class="content">
+
+                      {{ if eq $paginator.PageNumber 1 }}
+                        <header>
+                            <div class="unit-head">
+                                <div class="unit-inner unit-head-inner">
+                                    <h1 class="entry-title" itemprop="name">{{ .Site.Data.site.main_title }}</h1>
+                                </div>
+                            </div>
+                          {{ if .Site.Data.site.summary }}
+                          	<div class="site-summary">
+                          		{{ .Site.Data.site.summary | markdownify }}
+                          	</div>
+                          {{ end }}
+                        </header>
+
+                          <h2 class="pageTitle">Latest Articles</h2>
+
+                      {{ end }}
+
+
+                      <div class="home" id="home">
+                        <ul class="posts noList">
+                          {{ range $paginator.Pages }}
+                            <h2><a class="post-link" href="{{ .URL }}">{{ .Title }}</a></h2>
+                            <p class="description">{{ .Content | plainify | truncate 250 }} &nbsp; <a href="{{ .URL }}">continue reading</a></p>
+                            <span class="date">{{ .Date.Format "02 Jan 2006" }}</span>
+                          {{ end }}
+                        </ul>
+                        <!-- Pagination links -->
+                        <div class="pagination">
+                          {{ if $paginator.Prev }}
+                            <div class="prev_page">
+                              <a href="{{ $paginator.Prev.URL }}" class="previous button__outline">Newer Articles</a>
+                            </div>
+                          {{ end }}
+                          {{ if $paginator.Next }}
+                            <div class="next_page">
+                              <a href="{{ $paginator.Next.URL }}" class="next button__outline">Older Articles</a>
+                            </div>
+                          {{ end }}
+                        </div>
+                      </div>
+
+                       </div>
+                       <footer class="unit-foot">
+                           <div class="unit-inner unit-foot-inner">
+                               <p class="gotop">
+                                   <a class="internal" href="#page" class="back-to-top">Back to top</a>
+                               </p>
+                           </div>
+                       </footer>
+                     </div>
+                   </article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ partial "blog/footer.html" . }}
+    </div>
+
+    {{ partial "blog/scripts.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+
+{{ partial "head.html" . }}
+<body>
+  {{ partial "common/notices.html" . }}
+
+  <div id="page" class="hentry">
+    {{ partial "blog/header.html" . }}
+
+    <div class="body animated fadeInDown" role="main">
+        <div class="unit-body">
+            <div class="unit-inner unit-body-inner">
+                <div class="entry-content">
+
+
+<article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">{{ .Title }}</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            {{ $xmldate := .Date.Format "2011-04-24T20:34:46+08:00" }}
+                            <time itemprop="datePublished" class="date-pub "
+                                title="{{ $xmldate }}" datetime="{{ $xmldate }}">{{ .Date.Format "2006 Jan 2" }} </time>
+                            by
+                            <a class="author" href="/" rel="author"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Data.site.author.name }}{{ end }}</span></span></a>
+                            {{ partial "helpers/tags_list" . }}
+                        </p>
+                    </div>
+                    <div itemprop="articleBody">
+    					{{ .Content }}
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div>
+                      {{ partial "common/share.html" . }}
+                    </div>
+                    <div>
+                      {{ partial "common/author_bio.html" . }}
+                    </div>
+                    <div class="gotop">
+                        <a class="internal" href="#page">Back to top</a>
+                    </div>
+                    <nav class="pagination">
+                        {{ if .Prev }}
+                            <a class="internal" data-ga="Previous Post" rel="prev" href="{{ .Prev.URL }}" title="View '{{ .Prev.Title }}'"> ← {{ .Prev.Title }}</a>
+                        {{ end }}
+                        {{ if .Next }}
+                            <a class="internal" data-ga="Next Post" rel="next" href="{{ .Next.URL }}" title="View} '{{ .Next.Title }}'">{{ .Next.Title }} → </a>
+                        {{ end }}
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+</article>
+</div>
+</div>
+</div>
+</div>
+{{ partial "blog/footer.html" . }}
+</div>
+
+{{ partial "blog/scripts.html" . }}
+
+</body>
+</html>

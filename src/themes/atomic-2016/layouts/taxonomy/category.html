@@ -1,0 +1,68 @@
+{{ partial "head.html" . }}
+<body>
+  {{ partial "common/notices.html" . }}
+
+
+
+  <div id="page" class="hentry">
+    {{ partial "blog/header.html" . }}
+
+    <div class="body animated fadeInDown" role="main">
+        <div class="unit-body">
+            <div class="unit-inner unit-body-inner">
+                <div class="entry-content">
+
+
+<article class="unit-article layout-page">
+    <div class="unit-inner unit-article-inner">
+        <div class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title">{{ .Title }}</h1>
+                    </div>
+                </div>
+            </header>
+
+            <div class="bd article-content">
+                <div class="entry-content">
+
+
+  <div class="content container">
+    <ul class="posts">
+        {{ range .Data.Pages }}
+        <li>
+          <span><a href="{{ .Permalink }}">{{ .Title }}</a> <time class="pull-right post-list italic">{{ .Date.Format "2 Jan 2006" }}</time></span>
+        </li>
+        {{ end }}
+    </ul>
+  </div>
+
+
+
+
+                  </div>
+              </div>
+
+              <footer class="unit-foot">
+                  <div class="unit-inner unit-foot-inner">
+                      <p class="gotop">
+                          <a class="internal" href="#page">Back to top</a>
+                      </p>
+                  </div>
+              </footer>
+          </div>
+      </div>
+  </article>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  {{ partial "blog/footer.html" . }}
+  </div>
+
+  {{ partial "blog/scripts.html" . }}
+
+  </body>
+  </html>

@@ -1,0 +1,10 @@
+{{ if .Params.tags }}
+<ul class="list-tag list-linear">
+  {{ range sort .Params.tags }}
+        {{ $actual_tag_name := replace . "&#32;" " " }}
+        <li>
+            <a class="internal" data-ga="{{ $actual_tag_name }}" href='{{ $.Site.Data.site.paths.tags }}#{{ replace $actual_tag_name " " "-" }}' title="{{ $actual_tag_name }}">{{ $actual_tag_name }}</a>
+        </li>
+  {{ end }}
+</ul>
+{{ end }}

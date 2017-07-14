@@ -1,0 +1,13 @@
+{{ if .Site.Data.site.author.bio }}
+<div class="author_bio">
+	<h3>About {{ .Site.Data.site.author.name }}</h3>
+	{{ if .Site.Data.site.author.avatar }}
+	<div class="author-avatar">
+		<img alt="" src="{{ .Site.Data.site.author.avatar }}" srcset="{{ .Site.Data.site.author.avatar }} 2x" class="avatar avatar-60 photo" height="60" width="60">
+	</div>
+	{{ end }}
+	<div class="author-description">
+	{{ .Site.Data.site.author.bio | markdownify }}
+	</div>
+</div>
+{{ end }}
