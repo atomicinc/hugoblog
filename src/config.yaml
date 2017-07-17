@@ -1,3 +1,4 @@
+BaseURL: "/"
 disablePathToLower: true
 languageCode: en-us
 title: Atomic Energy
