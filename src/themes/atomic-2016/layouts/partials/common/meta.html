@@ -5,7 +5,7 @@
 <meta name="keywords" content="{{ if .Site.Data.site.author.username }}{{ .Site.Data.site.author.username }},{{ end }}{{ if ne .Params.Tags nil }}{{ delimit .Params.Tags ", " }}{{ else }}{{ .Site.Data.site.blog.keywords }}{{ end }}" />
 
 {{ if eq .URL "/404.html" }}
-    <meta http-equiv="refresh" content="5; url={{ .Site.BaseURL }}{{ .Site.Data.site.paths.home }}">
+    <meta http-equiv="refresh" content="5; url={{ .Site.Data.site.paths.home | absURL }}">
 {{ end }}
 
 {{ if eq .Params.Indexing false }}
