@@ -127,7 +127,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.search-field').simpleSsgSearch({
       jsonFile: '{{ "/search.json" | absURL }}',
-      template: '<li><a href="'+{{ "/" | absURL }}+'{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
       searchResults: '.search-wrapper .results',
       searchResultsTitle: '<h4>Search Results</h4>',
       noResults: '<p>No results found</p>'
