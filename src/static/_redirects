@@ -1,5 +1,5 @@
-http://www.atomicinc.com/* https://blog.atomicinc.com/:splat
-https://www.atomicinc.com/* https://blog.atomicinc.com/:splat
-http://atomicinc.com/* https://blog.atomicinc.com/:splat
-https://atomicinc.com/* https://blog.atomicinc.com/:splat
-http://blog.atomicinc.com/* https://blog.atomicinc.com/:splat
+http://www.atomicinc.com/* https://blog.atomicinc.com/:splat 301!
+https://www.atomicinc.com/* https://blog.atomicinc.com/:splat 301!
+http://atomicinc.com/* https://blog.atomicinc.com/:splat 301!
+https://atomicinc.com/* https://blog.atomicinc.com/:splat 301!
+http://blog.atomicinc.com/* https://blog.atomicinc.com/:splat 301!
