@@ -7,6 +7,7 @@ categories:
 - technology
 date: 2018-05-23T07:21:42Z
 published: false
+draft: true
 status: draft
 tags: []
 title: Kubernetes Is An Operations API
