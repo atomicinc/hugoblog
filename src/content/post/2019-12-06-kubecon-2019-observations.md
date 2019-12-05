@@ -66,7 +66,7 @@ Overall, the level seems to waffle between basic talks (sometimes masquerading a
 * Justin Cormack's work on notary and TUF - securing the software supply chain - drew a lot of interest. The number of attacks on the supply chain continues to grow, and interest is very high in maintaining the proven reliability of artifacts from source to production. It was encouraging to see two trends in his talk: 
   * the simplification of managing that supply chain, compared to earlier efforts, which largely were ignored 
   * the standardization of those efforts into image registry standards, i.e. the [OCI distribution specification](https://github.com/opencontainers/distribution-spec)
-  * Darren Shepard gave a very well-received presentation - to a packed and very interested room - on building a lightweight yet fully compliant Kubernetes implementation, i.e. Rancher’s [k3s](https://k3s.io). More on that below. 
+* Darren Shepard gave a very well-received presentation - to a packed and very interested room - on building a lightweight yet fully compliant Kubernetes implementation, i.e. Rancher’s [k3s](https://k3s.io). More on that below. 
 
 To my mind, the advanced sessions are good, with great interest; at the other end, interest is growing in basics. We may yet see KubeCon split into different conferences, or at least clearer tracks, to address the needs. 
 
