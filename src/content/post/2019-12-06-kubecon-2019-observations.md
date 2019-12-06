@@ -5,7 +5,7 @@ categories:
 - technology
 - conference
 - cloud-native
-date: 2019-09-05T08:45:42Z
+date: 2019-12-06T08:45:42Z
 published: true
 status: publish
 tags: []
