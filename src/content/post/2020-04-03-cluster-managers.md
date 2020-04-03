@@ -8,8 +8,8 @@ categories:
 date: 2020-04-02T08:45:42Z
 published: true
 status: publish
+title: Inception, Kubernetes Cluster Managers
 tags: []
-title: Inception: Kubernetes Cluster Managers
 type: post
 url: /2020/04/02/inception-kubernetes-cluster-managers
 ---
