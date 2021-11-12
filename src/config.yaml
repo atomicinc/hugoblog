@@ -6,3 +6,5 @@ taxonomies:
   tag: "tags"
   category: "categories"
 theme: atomic-2016
+ignoreErrors:
+- "error-remote-getjson"
