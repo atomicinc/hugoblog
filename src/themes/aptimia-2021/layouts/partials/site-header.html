@@ -1,0 +1,49 @@
+{{ $header_image := .Site.Data.site.header_image }}
+{{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+{{ $header_image := (trim $header_image "/") | absURL }}
+<header class="cover bg-top the-header">
+  <div class="unit-head">
+    <div class="unit-head-background" style="background-image: url('{{ $header_image }}'); background-position: 50% 50%; background-size: cover;"></div>
+      <div class="unit-inner unit-head-inner">
+          <nav class="nav-global">
+              <ul>
+                  <li class="logo nav-link">
+                      <button class="btn-menu" data-ga="Menu"></button>
+                      <h1><a href="{{ .Site.Data.site.paths.home }}">{{ .Site.Title }}</a></h1>
+                      <!--[if !IE]> -->
+                      <button class="btn-search" data-ga="Search"></button>
+                      <!-- <![endif]-->
+                  </li>
+                  {{ $total := len .Site.Data.site.navigation }}
+                  {{ range $i, $link := .Site.Data.site.navigation }}
+                  {{ $current := "" }}{{ $last := "" }}{{ $first := "" }}
+                  {{ if eq .Page.URL $link.url }}
+                  {{ $current := "current" }}
+                  {{ end }}
+                  {{ if eq $i 0 }}
+                  {{ $first := "first" }}
+                  {{ end }}
+                  {{ if eq $i $total  }}
+                  {{ $last := "last" }}
+                  {{ end }}
+                  <li class="element {{ $first }}{{ $current }}{{ $last }}">
+                      <a href="{{ $link.url }}">{{ $link.title }}</a>
+                  </li>
+                  {{ end }}
+                  <!--[if !IE]> -->
+                  <li class="nav-link"><a data-ga="Search" class="btn-search" href="#">Search</a></li>
+                  <!-- <![endif]-->
+              </ul>
+          </nav>
+      </div>
+  </div>
+</header>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="search">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+

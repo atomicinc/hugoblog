@@ -1,0 +1,11 @@
+name = "Atomic 2021"
+license = "Commercial"
+description = "Atomic Theme"
+tags = ["blog", "company"]
+features = ["blog", "themes"]
+min_version = "0.64.0"
+
+[author]
+    name = "deitch"
+    homepage = "https://github.com/deitch"
+

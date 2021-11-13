@@ -1,10 +1,16 @@
 BaseURL: "/"
-disablePathToLower: true
+disablePathToLower: false
 languageCode: en-us
 title: Atomic Energy
 taxonomies:
   tag: "tags"
   category: "categories"
-theme: atomic-2016
+theme: aptimia-2021
 ignoreErrors:
 - "error-remote-getjson"
+
+params:
+  date_format: "2006 Jan 2"
+
+permalinks:
+  post: /:year/:month/:day/:title/

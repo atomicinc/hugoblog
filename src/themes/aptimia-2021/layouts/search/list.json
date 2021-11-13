@@ -1,0 +1,12 @@
+[
+  {{ $total := len .Site.Pages }}
+  {{ range $i, $page := .Site.Pages }}
+    {{ $shortdate := $page.Date.Format "2 Jan 2006" }}
+    {
+      "title"      : "{{ $page.Title }}",
+      "url"        : "{{ $page.URL }}",
+      "date"       : "{{ $page.Date }}",
+      "shortdate"  : "{{ $shortdate }}"
+    }{{ if ne $i $total  }},{{ end }}
+  {{ end }}
+]

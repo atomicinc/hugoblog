@@ -9,7 +9,6 @@ status: publish
 title: Not Such A Paradox
 tags: []
 type: post
-url: /2021/11/12/not-such-a-paradox
 ---
 
 Is the cost of cloud a "trillion dollar paradox"? Legendary venture capital firm
