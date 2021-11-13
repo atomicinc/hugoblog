@@ -13,7 +13,7 @@
                     <div class="entry-content">
 
 
-                      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+                      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
 
 
 
