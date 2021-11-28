@@ -14,3 +14,5 @@ params:
 
 permalinks:
   post: /:year/:month/:day/:title/
+
+googleAnalytics: "UA-4223859-2"
