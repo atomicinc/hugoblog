@@ -1,6 +1,6 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range where .Site.RegularPages "Type" "==" "post" -}}
 {{- $shortdate := .Date.Format "2 Jan 2006" -}}
-{{- $.Scratch.Add "index" (dict "url" (.URL | absURL) "title" .Title "date" .Date "shortdate" $shortdate) -}}
+{{- $.Scratch.Add "index" (dict "url" (.Permalink | absURL) "title" .Title "date" .Date "shortdate" $shortdate) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
