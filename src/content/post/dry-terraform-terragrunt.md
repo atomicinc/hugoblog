@@ -14,7 +14,7 @@ type: post
 This post will be a little more technical than our usual, as we delve into the specific problems related to managing cloud
 infrastructure at scale, and proposed solutions.
 
-This post is a partnership between [Aptimia LLC](https://aptimia.com) and [Very Good Security, Inc.](https://www.verygoodsecurity.com/),
+This post is a partnership between [Aptimia LLC](https://aptimia.com) and [VGS](https://www.vgs.io/),
 and is cross-posted on both companies' blogs.
 
 ## Prelude - IaC at VGS
