@@ -14,8 +14,14 @@ type: post
 This post will be a little more technical than our usual, as we delve into the specific problems related to managing cloud
 infrastructure at scale, and proposed solutions.
 
-This post is a partnership between [Aptimia LLC](https://aptimia.com) and [Very Good Security, Inc.](https://www.verygoodsecurity.com/),
+This post is a partnership between [Aptimia LLC](https://aptimia.com) and [VGS](https://www.vgs.io/),
 and is cross-posted on both companies' blogs.
+
+## Prelude - IaC at VGS
+
+[VGS](https://www.vgs.io) has had a long and varied relationship with different IaC solutions over the course of the company. Way back in 2016 when we first started out, VGS was a CloudFormation shop and built the first implementations of our KMS, VPC, and [proxy](https://www.verygoodsecurity.com/docs/vault/concepts/proxies-and-routing-data) infrastructure successfully with [AWS CloudFormation](https://aws.amazon.com/cloudformation/) and some [Troposphere](https://github.com/cloudtools/troposphere) to help glue things together. Over time we discovered gaps within CloudFormation for newer AWS services and non-AWS services created a need to explore alternative IaC solutions. On this journey we've mostly settled on Terraform with the help of [Terragrunt](https://terragrunt.gruntwork.io/) with a small dabbling of [AWS CDK](https://aws.amazon.com/cdk/) and [bazel](https://bazel.build/) along the way. Ultimately we've settled on moving all of our IaC to Terraform as we've found this well supported and liked across both the wider community and our infrastructure team. 
+
+As part of this journey we've started to pay close attention to how we model our IaC modules and components and discovered some interesting facts and findings that we wanted to share with the community.
 
 ## Summary
 
